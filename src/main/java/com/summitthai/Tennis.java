@@ -2,20 +2,12 @@ package com.summitthai;
 
 public class Tennis {
     
+	private static final String[] POINT_NAMES = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
+	
     private int pointPlayerOne=0;
-        
     
     public String getScore() {
-    	
-    	if(pointPlayerOne == 2) {
-            return "Thirty-Love";
-    	} 
-    		
-        if(pointPlayerOne == 1) {
-            return "Fifteen-Love";
-        } 
-    	
-        return "Love-Love";
+        return Tennis.POINT_NAMES[pointPlayerOne] + "-Love";
     }
 
     public void playerOneGetPoint() {
