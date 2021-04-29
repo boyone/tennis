@@ -6,11 +6,16 @@ public class Tennis {
         
     
     public String getScore() {
-        if(pointPlayerOne==0){
-            return "Love-Love";
-        }else{
+    	
+    	if(pointPlayerOne == 2) {
+            return "Thirty-Love";
+    	} 
+    		
+        if(pointPlayerOne == 1) {
             return "Fifteen-Love";
-        }
+        } 
+    	
+        return "Love-Love";
     }
 
     public void playerOneGetPoint() {

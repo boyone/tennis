@@ -19,8 +19,7 @@ public class TennisTest {
         // Assert
         assertEquals(expectedValue, actualValue);
     }
-    
-    
+        
     @Test
     public void beginGamePlayerOneWinOneBallScoreShouldBeFifteen_Love() {
         // Arrange
@@ -34,4 +33,19 @@ public class TennisTest {
         // Assert
         assertEquals(expectedValue, actualValue);
     }
+    
+	@Test
+	public void beginGamePlayerOneWinTwoBallScoreShouldBeThirty_Love() {
+		// Arrange
+		Tennis tennis = new Tennis();
+		String expectedValue = "Thirty-Love";
+
+		// Act
+		tennis.playerOneGetPoint();
+		tennis.playerOneGetPoint();
+		String actualValue = tennis.getScore();
+
+		// Assert
+		assertEquals(expectedValue, actualValue);
+	}
 }
