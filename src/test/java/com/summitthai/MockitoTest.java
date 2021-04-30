@@ -37,7 +37,7 @@ public class MockitoTest {
     }
 
     @Test
-    void stubThrowException() {
+    void stubReturnThrowException() {
         // Arrange
         when(mockedList.get(0)).thenThrow(new IndexOutOfBoundsException());
         MyCollection collection = new MyCollection(mockedList);
@@ -45,6 +45,18 @@ public class MockitoTest {
         // Assert
         assertThrows(IndexOutOfBoundsException.class, () -> {
             collection.search(0);
+        });
+    }
+
+    @Test
+    void stubDoThrowException() {
+        // Arrange
+        doThrow(new IndexOutOfBoundsException()).when(mockedList).add("0");
+        MyCollection collection = new MyCollection(mockedList);
+
+        // Assert
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+            collection.save("0");
         });
     }
 
